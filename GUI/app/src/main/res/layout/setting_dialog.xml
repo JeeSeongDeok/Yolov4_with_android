@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#14151E">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radioButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="월요일"
+                android:textColor="@color/white"
+                tools:layout_editor_absoluteX="50dp"
+                tools:layout_editor_absoluteY="73dp" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="화요일"
+                android:textColor="@color/white"
+                tools:layout_editor_absoluteX="50dp"
+                tools:layout_editor_absoluteY="139dp" />
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="수요일"
+                android:textColor="@color/white"
+                tools:layout_editor_absoluteX="50dp"
+                tools:layout_editor_absoluteY="209dp" />
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="목요일"
+                android:textColor="@color/white"
+                tools:layout_editor_absoluteX="50dp"
+                tools:layout_editor_absoluteY="278dp" />
+
+            <RadioButton
+                android:id="@+id/radioButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="금요일"
+                android:textColor="@color/white"
+                tools:layout_editor_absoluteX="50dp"
+                tools:layout_editor_absoluteY="341dp" />
+
+            <RadioButton
+                android:id="@+id/radioButton6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="토요일"
+                android:textColor="@color/white"
+                tools:layout_editor_absoluteX="50dp"
+                tools:layout_editor_absoluteY="407dp" />
+
+            <RadioButton
+                android:id="@+id/radioButton7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="일요일"
+                android:textColor="@color/white"
+                tools:layout_editor_absoluteX="50dp"
+                tools:layout_editor_absoluteY="471dp" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/setting_dialog_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+    </LinearLayout>
+</LinearLayout>
