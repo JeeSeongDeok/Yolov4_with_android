@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -21,6 +20,7 @@ import android.widget.TextView;
 import com.example.gui.addDecorator.SaturdayDecorator;
 import com.example.gui.addDecorator.SundayDecorator;
 import com.example.gui.addDecorator.onDayDecorator;
+import com.example.gui.ui.main.MainActivity;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.CalendarMode;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
@@ -32,7 +32,7 @@ import java.util.Date;
 
 public class CalendarView extends Fragment {
     public MaterialCalendarView calendarView;
-    MainActivity MainActivity;
+    com.example.gui.ui.main.MainActivity MainActivity;
     SQLiteDatabase db;
     DBManger dbManger;
     Button calendar_button1, calendar_button2;

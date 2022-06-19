@@ -1,4 +1,4 @@
-package com.example.gui;
+package com.example.gui.ui.main;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -13,6 +13,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.gui.CalendarView;
+import com.example.gui.DBManger;
+import com.example.gui.LoginActivity;
+import com.example.gui.R;
 import com.example.gui.adapter.Fragment_Pager_Adapter;
 
 import java.text.SimpleDateFormat;
@@ -22,15 +26,16 @@ import java.util.Date;
 import devlight.io.library.ntb.NavigationTabBar;
 
 /*
+ * MainActivity.java
+ * 이 액티비티는 Fragment를 관리함.
+ * 다양한 View를 관리할 수 있도록 바텀네비게이션을 사용함.
  * Method - https://github.com/Devlight/NavigationTabBar
  * */
 public class MainActivity extends AppCompatActivity {
     private FragmentManager fragmentManager;
     private FragmentTransaction transaction;
     public SharedPreferences prefs;
-    SQLiteDatabase db;
-    DBManger dbManger;
-    CalendarView CalendarView;
+    com.example.gui.CalendarView CalendarView;
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
@@ -38,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // UI Load
         initUI();
-        initDB();
 
         fragmentManager = getSupportFragmentManager();
         CalendarView = new CalendarView();
@@ -138,45 +142,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(newIntent);
 
             prefs.edit().putBoolean("isFirstRun", false).apply();
-        }
-    }
-    public void initDB(){
-        dbManger = DBManger.getInstance(this, "Status", null, 1);
-        db = dbManger.getWritableDatabase();
-        // Get Time Data
-        long now = System.currentTimeMillis();
-        Date mDate = new Date(now);
-        SimpleDateFormat simpleDate = new SimpleDateFormat("yyyy-MM-dd");
-        String getTime = simpleDate.format(mDate);
-        // If First start, Insert Date data
-        DBFirstRun("Stats", getTime);
-    }
-    // Today data Presence or absence Function
-    public void DBFirstRun(String tableName, String time) {
-        Cursor cursor = null;
-        String id = null;
-        try {
-            // Find Today Time data Query: SELECT ID FROM Stats FROM Day = ?
-            cursor = db.query(tableName, null, "DAY = ?", new String[]{time.toString()}, null, null, null);
-            System.out.println("cursor: " + cursor);
-            // Have Today Time data
-            if (cursor != null) {
-                while (cursor.moveToNext()) {
-                    id = cursor.getString(cursor.getColumnIndex("ID"));
-                }
-            }
-            if(id == null){
-                ContentValues contentValues = new ContentValues();
-                contentValues.put("DAY", time);
-                contentValues.put("BREAKFAST", 0);
-                contentValues.put("LUNCH", 0);
-                contentValues.put("DINNER", 0);
-                db.insert(tableName, null, contentValues);
-            }
-        } finally {
-            if (cursor != null) {
-                cursor.close();
-            }
         }
     }
 }
