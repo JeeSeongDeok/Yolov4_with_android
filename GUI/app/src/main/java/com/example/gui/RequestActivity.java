@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.example.gui.ui.main.MainActivity;
+
 public class RequestActivity extends AppCompatActivity {
     Button check_btn;
     private final int request_Code=101;

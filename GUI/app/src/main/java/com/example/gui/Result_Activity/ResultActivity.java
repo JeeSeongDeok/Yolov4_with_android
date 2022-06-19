@@ -32,7 +32,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
 import com.example.gui.DBManger;
-import com.example.gui.MainActivity;
+import com.example.gui.ui.main.MainActivity;
 import com.example.gui.R;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;

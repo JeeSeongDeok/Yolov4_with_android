@@ -15,7 +15,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.gui.DBManger;
-import com.example.gui.MainActivity;
+import com.example.gui.ui.main.MainActivity;
 import com.example.gui.R;
 
 public class BodyresultActivity extends AppCompatActivity {

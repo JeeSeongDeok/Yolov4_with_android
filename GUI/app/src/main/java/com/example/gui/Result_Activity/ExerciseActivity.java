@@ -19,7 +19,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.gui.DBManger;
-import com.example.gui.MainActivity;
+import com.example.gui.ui.main.MainActivity;
 import com.example.gui.R;
 
 import java.text.SimpleDateFormat;
