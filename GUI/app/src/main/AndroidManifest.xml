@@ -46,7 +46,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Result_Activity.BodyresultActivity"/>
-        <activity android:name=".LoginActivity"/>
+        <activity android:name=".ui.login.LoginActivity"/>
         <activity android:name=".RequestActivity">
         </activity>
         <activity android:name=".Result_Activity.ResultActivity">

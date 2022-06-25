@@ -82,7 +82,8 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="20dp"
                         app:srcCompat="@drawable/ic_setting_health"
-                        android:layout_marginLeft="15dp" />
+                        android:layout_marginLeft="15dp"
+                        app:tint="@color/white" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -98,7 +99,8 @@
                         android:layout_height="40dp"
                         android:layout_marginLeft="15dp"
                         android:layout_marginBottom="20dp"
-                        app:srcCompat="@drawable/ic_setting_rular" />
+                        app:srcCompat="@drawable/ic_setting_rular"
+                        app:tint="@color/white"/>
 
                     <ImageView
                         android:id="@+id/imageView2"
@@ -163,7 +165,8 @@
                         android:layout_marginTop="15dp"
                         android:layout_marginLeft="15dp"
                         android:layout_marginBottom="20dp"
-                        app:srcCompat="@drawable/ic_setting_locked" />
+                        app:srcCompat="@drawable/ic_setting_locked"
+                        app:tint="@color/white"/>
 
                     <ImageView
                         android:id="@+id/imageView3"
@@ -187,7 +190,7 @@
                         android:textColor="#ffffff" />
 
                     <ToggleButton
-                        android:id="@+id/togglebutton"
+                        android:id="@+id/lockToggleBtn"
                         style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="25dp"
@@ -221,7 +224,8 @@
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="20dp"
-                        app:srcCompat="@drawable/ic_setting_adblock" />
+                        app:srcCompat="@drawable/ic_setting_adblock"
+                        app:tint="@color/white"/>
 
                     <ImageView
                         android:id="@+id/imageView4"
@@ -269,7 +273,8 @@
                         android:layout_height="40dp"
                         android:layout_marginLeft="15dp"
                         android:layout_marginBottom="20dp"
-                        app:srcCompat="@drawable/ic_setting_in_cal" />
+                        app:srcCompat="@drawable/ic_setting_in_cal"
+                        app:tint="@color/white"/>
 
                     <ImageView
                         android:id="@+id/imageView5"
@@ -292,7 +297,7 @@
                         android:textColor="#ffffff" />
 
                     <Button
-                        android:id="@+id/button7"
+                        android:id="@+id/calendarSelectBtn"
                         style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="36dp"
@@ -335,7 +340,8 @@
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="20dp"
-                        app:srcCompat="@drawable/ic_setting_mail" />
+                        app:srcCompat="@drawable/ic_setting_mail"
+                        app:tint="@color/white"/>
 
                     <ImageView
                         android:id="@+id/imageView6"
