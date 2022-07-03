@@ -41,11 +41,9 @@ public class PlanView extends Fragment  {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.view_totalplan,container,false);
-        //처음 아무것도 안눌러도 보여줄 fragment화면
         fragmentManager = getActivity().getSupportFragmentManager();
         fa = new dayPlanFragment();
         fragmentManager.beginTransaction().replace(R.id.plan_frame, fa).commit();
-        // Listener
         plan_button1 = (Button)rootView.findViewById(R.id.plan_button1);
         plan_button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,13 +52,6 @@ public class PlanView extends Fragment  {
                 dayPlanFragment dayPlanFragment = new dayPlanFragment();
                 transaction.replace(R.id.plan_frame, dayPlanFragment);
                 transaction.commit();
-//                if(fa==null){
-//                    fa = new plan_frag1();
-//                    fragmentManager.beginTransaction().add(R.id.plan_frame, fa).commit();
-//                }
-//                if(fa != null) fragmentManager.beginTransaction().show(fa).commit();
-//                if(fb != null) fragmentManager.beginTransaction().hide(fb).commit();
-//                if(fc != null) fragmentManager.beginTransaction().hide(fc).commit();
             }
         });
         plan_button2 = (Button)rootView.findViewById(R.id.plan_button2);
