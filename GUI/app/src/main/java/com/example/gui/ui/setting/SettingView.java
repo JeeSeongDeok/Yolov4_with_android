@@ -1,4 +1,4 @@
-package com.example.gui;
+package com.example.gui.ui.setting;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
@@ -8,12 +8,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+
+import com.example.gui.R;
 
 public class SettingView extends Fragment {
     private View rootView;
@@ -21,6 +25,7 @@ public class SettingView extends Fragment {
     private Button calendarSelectBtn;
 
     public SettingView() {/*Construct*/}
+
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.activity_setting, container, false);
         setupUI();
@@ -32,7 +37,7 @@ public class SettingView extends Fragment {
         lockToggleBtn = (ToggleButton) rootView.findViewById(R.id.lockToggleBtn);
 
         lockToggleBtn.setOnClickListener(v -> toggleOnClick());
-        calendarSelectBtn.setOnClickListener(v-> calendarSetting());
+        calendarSelectBtn.setOnClickListener(v -> calendarSetting());
     }
 
     private void toggleOnClick() {
@@ -52,33 +57,43 @@ public class SettingView extends Fragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.setting_dialog, null, false);
         builder.setView(view);
-        RadioButton monBtn = (RadioButton)view.findViewById(R.id.monBtn);
-        RadioButton tuesBtn = (RadioButton)view.findViewById(R.id.tueBtn);
-        RadioButton wedBtn = (RadioButton)view.findViewById(R.id.wedBtn);
-        RadioButton thursBtn = (RadioButton)view.findViewById(R.id.thursBtn);
-        RadioButton friBtn = (RadioButton)view.findViewById(R.id.friBtn);
-        RadioButton saturdayBtn = (RadioButton)view.findViewById(R.id.saturBtn);
-        RadioButton sundayBtn = (RadioButton)view.findViewById(R.id.sunBtn);
-        Button dialog_b = (Button) view.findViewById(R.id.setting_dialog_button);
-        AlertDialog dialog = builder.create();
-
-        dialog_b.setOnClickListener(new View.OnClickListener() {
+        RadioGroup radioGroup = view.findViewById(R.id.radioGroup);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                if(monBtn.isChecked()) calendarSelectBtn.setText("월요일");
-                else if(tuesBtn.isChecked()) calendarSelectBtn.setText("화요일");
-                else if(wedBtn.isChecked()) calendarSelectBtn.setText("수요일");
-                else if(thursBtn.isChecked()) calendarSelectBtn.setText("목요일");
-                else if(friBtn.isChecked()) calendarSelectBtn.setText("금요일");
-                else if(saturdayBtn.isChecked()) calendarSelectBtn.setText("토요일");
-                else if(sundayBtn.isChecked()) calendarSelectBtn.setText("일요일");
-
-                dialog.dismiss();
+            public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
+                String day;
+                switch (checkedId) {
+                    case R.id.monBtn:
+                        day = "월요일";
+                        break;
+                    case R.id.tuesday:
+                        day = "화요일";
+                        break;
+                    case R.id.wednesday:
+                        day = "수요일";
+                        break;
+                    case R.id.thursday:
+                        day = "목요일";
+                        break;
+                    case R.id.friday:
+                        day = "금요일";
+                        break;
+                    case R.id.saturday:
+                        day = "토요일";
+                        break;
+                    case R.id.sunday:
+                        day = "일요일";
+                        break;
+                    default:
+                        day = "Error";
+                        break;
+                }
+                calendarSelectBtn.setText(day);
             }
         });
+        AlertDialog dialog = builder.create();
         return dialog;
 
     }
-
 
 }
