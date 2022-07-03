@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Code/Yolov4_with_android/GUI/app/src/main/res/layout/activity_result.xml" value="0.36614583333333334" />
         <entry key="..\:/Code/Yolov4_with_android/GUI/app/src/main/res/layout/activity_setting.xml" value="0.36614583333333334" />
+        <entry key="..\:/Code/Yolov4_with_android/GUI/app/src/main/res/layout/request_authority.xml" value="0.36614583333333334" />
         <entry key="..\:/Code/Yolov4_with_android/GUI/app/src/main/res/layout/setting_dialog.xml" value="0.36614583333333334" />
       </map>
     </option>

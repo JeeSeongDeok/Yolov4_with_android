@@ -13,7 +13,7 @@ import com.example.gui.CollectView;
 import com.example.gui.PlanView;
 import com.example.gui.SelectView;
 import com.example.gui.CalendarView;
-import com.example.gui.SettingView;
+import com.example.gui.ui.setting.SettingView;
 
 public class Fragment_Pager_Adapter extends FragmentPagerAdapter {
     public Fragment_Pager_Adapter(FragmentManager fm){
