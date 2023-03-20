@@ -12,6 +12,10 @@
 
 runOnUiThread를 이용해 결과를 메인 스레드로 전달해, 화면에 반영한다.
 
+<details>
+  <summary> <h3> 눌러서 코드 보기 </h3> </summary>
+<div markdown="1">
+
 ```java
 String portNumber = "5000";
   String postUrl= "http://ipaddress:5000/model";
@@ -55,9 +59,16 @@ String portNumber = "5000";
             }
         });
 ```
+  </div>
+  </details>
+  
 
 Autocompletetextview는 자동완성을 도와주는 뷰이다. 3글자 이상부터 통신을 하며, runOnUiThread를 이용해 Ui를 갱신했다.
 
+<details>
+<summary> <h3> 눌러서 코드 보기 </h3> </summary>
+<div markdown="1">
+  
 ```java
 private void makeApiCall(String text) {
         String portNumber = "5000";
@@ -109,12 +120,19 @@ private void makeApiCall(String text) {
 
     }
 ```
+                                                                 
+</div>
+</details>
 
 ### Back-end
 
 마이크로 프레임워크인 Flask를 사용해 가벼운 API 서버를 만들 수 있었다. 
 
 자원을 요구하면 YOLO 모델을 로드해 결과를 리턴한다
+  
+<details>
+<summary> <h3> 눌러서 코드 보기 </h3> </summary>
+<div markdown="1">
 
 ```python
 @app.route('/model', methods = ['GET', 'POST'])
@@ -134,7 +152,9 @@ def handle_request():
 
     print(temp)
     return temp
-```
+```  
+</div>
+</details>
 
 ### Yolov4(Tensorflow 2.x) with colab
  Yolov4는 학습은 다크넷 프레임워크를 이용, weight파일을 pb파일로 변환.
