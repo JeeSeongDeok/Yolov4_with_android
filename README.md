@@ -281,6 +281,7 @@ model.save('model/food_v2_4.h5')
 3. 개발자에게 문의 메일을 보낼 수 있다.
 
 ## 프로젝트에 참가한 사람
+- Android 담당, BackEnd 담당 [@JeeSeongDeok](https://github.com/JeeSeongDeok)
 - AI 담당 [@HYB0321](https://github.com/HYB0321)
 - AI 담당, Android 보조 [@koasy17](https://github.com/koasy17)
 - Android 담당, AI 보조 [@tmddmddnjs](https://github.com/tmddmddnjs)
